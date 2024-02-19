@@ -1,0 +1,31 @@
+.createPhone
+    display: flex
+    flex-wrap: nowrap
+
+    &_main
+        width: 80%
+        display: flex
+        justify-content: center
+        align-items: center
+        &_list-left
+            display: flex
+            align-items: center
+            flex-direction: column
+        &_item-left
+            display: flex
+            align-items: center
+
+    
+.sidebar
+    overflow: scroll
+    width: 20%
+    border-right: 1px solid black
+    &_list
+        display: flex
+        flex-direction: column
+        gap: 15px
+        user-select: none
+
+    &-active
+        color: #fff
+        background-color:  #333 
