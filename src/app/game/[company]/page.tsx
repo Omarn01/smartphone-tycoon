@@ -1,5 +1,5 @@
-import Header from '@/app/components/game/header/Header'
-import Sidebar from '@/app/components/game/sidebar/Sidebar'
+import Header from '@/components/game/header/Header'
+import Sidebar from '@/components/game/sidebar/Sidebar'
 
 export default function Page() {
   return (

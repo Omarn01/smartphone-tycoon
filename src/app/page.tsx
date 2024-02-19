@@ -1,4 +1,4 @@
-import Homepage from './components/Homepage/Homepage'
+import Homepage from '../components/Homepage/Homepage'
 import styles from './page.module.css'
 
 export default function Home() {

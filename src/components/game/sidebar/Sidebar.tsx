@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import './bottombar.sass'
+import './Bottombar.sass'
 
 import { usePathname } from 'next/navigation'
 
-export default function bottombar() {
+export default function Bottombar() {
   const companyName = usePathname().split('/')[2]
   return (
     <div className='bottombar'>

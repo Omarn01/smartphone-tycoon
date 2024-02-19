@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import './PhoneModel.sass'
-import camera from '../../../../public/1camera1.png'
+import camera from '../../../public/1camera1.png'
 import Image from 'next/image'
 
 interface IPhone {

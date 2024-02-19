@@ -1,6 +1,6 @@
 'use client'
 
-import PhoneModel from '@/app/components/PhoneModel/PhoneModel'
+import PhoneModel from '@/components/PhoneModel/PhoneModel'
 import './CreatePhone.sass'
 
 import { useState } from 'react'
