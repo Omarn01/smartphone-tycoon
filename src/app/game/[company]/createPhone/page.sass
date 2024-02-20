@@ -1,9 +1,10 @@
 .createPhone
     display: flex
     flex-wrap: nowrap
+    user-select: none
 
     &_main
-        width: 80%
+        width: 90%
         display: flex
         justify-content: center
         align-items: center
@@ -17,15 +18,20 @@
 
     
 .sidebar
+    user-select: none
     overflow: scroll
-    width: 20%
+    width: 10%
     border-right: 1px solid black
+
+
     &_list
         display: flex
         flex-direction: column
-        gap: 15px
         user-select: none
+    &_item
+        padding: 5px
 
+        
     &-active
         color: #fff
         background-color:  #333 
