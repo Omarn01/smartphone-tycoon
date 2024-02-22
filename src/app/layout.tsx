@@ -302,12 +302,12 @@ export default function RootLayout({
 
     if (technologies === 'adaptiveScreenFrequency')
       setInitialPriceState((prev: IPrice) => ({ ...prev, HDRValue: count }))
-    let finallPrice = 0
+    let finalPrice = 0
 
-    for (let key in initialPriceState) {
-      finallPrice += initialPriceState[key]
-    }
-    setPrice(finallPrice)
+    Object.entries(initialPriceState).forEach(([_, value]) => {
+      finalPrice += value
+    })
+    setPrice(finalPrice)
   }
   console.log(price)
 
