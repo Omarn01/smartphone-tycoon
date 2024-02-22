@@ -3,20 +3,21 @@
     align-items: center
     gap: 30px
     &_wrapper
-        border: 1px solid black
+        border: 2px solid black
         border-radius: 10px
         display: flex
         flex-direction: column
         justify-content: space-between
         align-items: center
         gap: 5px
-        padding: 5px 0
+        // padding: 5px 5px 15px !important
     
 
     &_top
         display: flex
         align-items: center
         gap: 5px
+        border: 1px solid red
 
     &_frontCamera
         border: 1px solid black
@@ -24,6 +25,7 @@
         border-radius: 50%
         width: 5px
         height: 5px
+        order: -1
 
     &_speaker
         border: 1px solid black
@@ -38,31 +40,16 @@
         width: 70px 
         max-width: 100%
         height: 100px
+        border: 1px solid gray
 
         background: url(https://rozetked.me/images/uploads/webp/0nz0CZpxMfnY.webp)  center / contain no-repeat border-box
         background-size: cover
-        // filter: blur(10px)
-        // filter: contrast(70%) grayscale(40%)
-        // filter: grayscale(50%)
-        // filter: opacity(100%)
-
-
-
-        &-filter
-            width: 100%
-            height: 100%
-            
-            backdrop-filter: blur(10px)
-            backdrop-filter: contrast(30%)
-
-
-
-
 
 
     &_homeButton
+        // display: none !important
         border: 1px solid black
-
+        // border-radius: 50%
         width: 30px
         height: 10px
         border-radius: 5px

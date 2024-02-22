@@ -164,159 +164,232 @@ export default function Display() {
       style={{ display: context.sidebar === 4 ? 'flex' : 'none' }}
       className='createPhone_display'
     >
-      <div className='createPhone_display_list'>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'TN'}
-            name='matrix'
-            checked={input.TN}
-            onChange={() => changeChecked('TN')}
-          />
-          <p>TN</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'IPS'}
-            checked={input.IPS}
-            name='matrix'
-            onChange={() => changeChecked('IPS')}
-          />
-
-          <p>IPS</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'AMOLED'}
-            checked={input.AMOLED}
-            name='matrix'
-            onChange={() => changeChecked('AMOLED')}
-          />
-
-          <p>AMOLED</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'SUPERAMOLED'}
-            checked={input.SUPERAMOLED}
-            name='matrix'
-            onChange={() => changeChecked('SUPERAMOLED')}
-          />
-
-          <p>SUPER AMOLED</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'OLED'}
-            checked={input.OLED}
-            name='matrix'
-            onChange={() => changeChecked('OLED')}
-          />
-
-          <p>OLED</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'QLED'}
-            checked={input.QLED}
-            name='matrix'
-            onChange={() => changeChecked('QLED')}
-          />
-
-          <p>QLED</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'LCD'}
-            checked={input.LCD}
-            name='matrix'
-            onChange={() => changeChecked('LCD')}
-          />
-
-          <p>LCD</p>
-        </li>
-      </div>
-      <PhoneModel front={true} />
-      <div className='createPhone_display_list'>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'LDPI'}
-            checked={resolutionInput.LDPI}
-            name='resolution'
-            onChange={() => changeCheckedResolution('LDPI')}
-          />
-          <p>LDPI (240x320)</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'MDPI'}
-            checked={resolutionInput.MDPI}
-            name='resolution'
-            onChange={() => changeCheckedResolution('MDPI')}
-          />
-          <p>MDPI (320x480)</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'HDPI'}
-            checked={resolutionInput.HDPI}
-            name='resolution'
-            onChange={() => changeCheckedResolution('HDPI')}
-          />
-          <p>HDPI (480x800)</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'XHDPI'}
-            checked={resolutionInput.XHDPI}
-            name='resolution'
-            onChange={() => changeCheckedResolution('XHDPI')}
-          />
-          <p>XHDPI (720x1280)</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'XXHDPI'}
-            checked={resolutionInput.XXHDPI}
-            name='resolution'
-            onChange={() => changeCheckedResolution('XXHDPI')}
-          />
-          <p>XXHDPI (1080x1920)</p>
-        </li>
-        <li className='createPhone_display_item'>
-          <input
-            type='radio'
-            value={'XXXHDPI'}
-            checked={resolutionInput.XXXHDPI}
-            name='resolution'
-            onChange={() => changeCheckedResolution('XXXHDPI')}
-          />
-          <p>XXXHDPI (1440x2560)</p>
-        </li>
-      </div>
-      <div>
-        <div>peak brightness {context.peakBrightness} nit</div>
+      <div className='createPhone_display_main'>
         <div>
-          <button className='button-count'>-</button>
-          <button className='button-count'>+</button>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'TN'}
+              name='matrix'
+              checked={input.TN}
+              onChange={() => changeChecked('TN')}
+            />
+            <p>TN</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'IPS'}
+              checked={input.IPS}
+              name='matrix'
+              onChange={() => changeChecked('IPS')}
+            />
+
+            <p>IPS</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'AMOLED'}
+              checked={input.AMOLED}
+              name='matrix'
+              onChange={() => changeChecked('AMOLED')}
+            />
+
+            <p>AMOLED</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'SUPERAMOLED'}
+              checked={input.SUPERAMOLED}
+              name='matrix'
+              onChange={() => changeChecked('SUPERAMOLED')}
+            />
+
+            <p>SUPER AMOLED</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'OLED'}
+              checked={input.OLED}
+              name='matrix'
+              onChange={() => changeChecked('OLED')}
+            />
+
+            <p>OLED</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'QLED'}
+              checked={input.QLED}
+              name='matrix'
+              onChange={() => changeChecked('QLED')}
+            />
+
+            <p>QLED</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'LCD'}
+              checked={input.LCD}
+              name='matrix'
+              onChange={() => changeChecked('LCD')}
+            />
+
+            <p>LCD</p>
+          </li>
+        </div>
+        <PhoneModel front={true} />
+        <div className='createPhone_display_list'>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'LDPI'}
+              checked={resolutionInput.LDPI}
+              name='resolution'
+              onChange={() => changeCheckedResolution('LDPI')}
+            />
+            <p>LDPI (240x320)</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'MDPI'}
+              checked={resolutionInput.MDPI}
+              name='resolution'
+              onChange={() => changeCheckedResolution('MDPI')}
+            />
+            <p>MDPI (320x480)</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'HDPI'}
+              checked={resolutionInput.HDPI}
+              name='resolution'
+              onChange={() => changeCheckedResolution('HDPI')}
+            />
+            <p>HDPI (480x800)</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'XHDPI'}
+              checked={resolutionInput.XHDPI}
+              name='resolution'
+              onChange={() => changeCheckedResolution('XHDPI')}
+            />
+            <p>XHDPI (720x1280)</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'XXHDPI'}
+              checked={resolutionInput.XXHDPI}
+              name='resolution'
+              onChange={() => changeCheckedResolution('XXHDPI')}
+            />
+            <p>XXHDPI (1080x1920)</p>
+          </li>
+          <li className='createPhone_display_item'>
+            <input
+              type='radio'
+              value={'XXXHDPI'}
+              checked={resolutionInput.XXXHDPI}
+              name='resolution'
+              onChange={() => changeCheckedResolution('XXXHDPI')}
+            />
+            <p>XXXHDPI (1440x2560)</p>
+          </li>
         </div>
       </div>
-      <div>
-        <div>screen frequency {context.screenFrequency} Hz</div>
+      <div className='createPhone_display_other'>
         <div>
-          <button className='button-count'>-</button>
-          <button className='button-count'>+</button>
+          <div>peak brightness {context.phone.peakBrightness} nit</div>
+          <div>
+            <button
+              onClick={() => context.updatePeakBrightness('-')}
+              className='button-count'
+            >
+              -
+            </button>
+            <button
+              onClick={() => context.updatePeakBrightness('+')}
+              className='button-count'
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div>
+          <div>screen frequency {context.phone.screenFrequency} Hz</div>
+          <div>
+            <button
+              onClick={() => context.updateScreenFrequency('-')}
+              className='button-count'
+            >
+              -
+            </button>
+            <button
+              onClick={() => context.updateScreenFrequency('+')}
+              className='button-count'
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div>screen frequency {context.phone.HDR}</div>
+          <div>
+            <button
+              onClick={() => context.updateHDR('-')}
+              className='button-count'
+            >
+              -
+            </button>
+            <button
+              onClick={() => context.updateHDR('+')}
+              className='button-count'
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>Screen protection</div>
+            <div>Corning gorilla glass {context.phone.screenProtection}</div>
+          </div>
+          <div>
+            <button
+              onClick={() => context.updateScreenProtection('-')}
+              className='button-count'
+            >
+              -
+            </button>
+            <button
+              onClick={() => context.updateScreenProtection('+')}
+              className='button-count'
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div>
+          <div>Adaptive Screen Frequency</div>
+          <div>
+            <input
+              type='checkbox'
+              onChange={(e: any) =>
+                context.updateAdaptiveScreenFrequency(e.target.checked)
+              }
+            />
+          </div>
         </div>
       </div>
     </div>

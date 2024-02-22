@@ -7,10 +7,6 @@ import PhoneModel from '@/components/PhoneModel/PhoneModel'
 export default function Color() {
   const context = useContext<any>(Context)
 
-  const changeColor = (color: string) => {
-    context.setPhoneColor(color)
-  }
-
   return (
     <div
       style={{ display: context.sidebar === 2 ? 'flex' : 'none' }}
@@ -21,7 +17,7 @@ export default function Color() {
           <input
             type='color'
             value={context.phoneColor}
-            onChange={e => changeColor(e.target.value)}
+            onChange={e => context.changeColor(e.target.value)}
           />
         </div>
       </div>

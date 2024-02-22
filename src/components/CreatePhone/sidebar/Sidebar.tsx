@@ -1,20 +1,17 @@
 'use client'
 
-import { FC, useContext } from 'react'
+import { FC, useCallback, useContext, useEffect, useMemo } from 'react'
 import { Context } from '@/app/layout'
-
-interface IProps {
-  sidebar: number
-  setSidebar: FC
-}
 
 export default function Sidebar() {
   const sidebar = useContext<any>(Context)
 
   console.log(sidebar)
-  const toggleSidebar = (i: number) => {
-    sidebar.setSidebar(i)
-  }
+
+  const toggleSidebar = useCallback(
+    (i: number) => sidebar.setSidebar(i),
+    [sidebar.sidebar]
+  )
 
   return (
     <div className='sidebar'>

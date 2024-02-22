@@ -2,13 +2,19 @@
 
     &_display
         display: flex
-        flex-direction: row
+        flex-direction: column
         flex-wrap: nowrap
         justify-content: space-between
         align-items: center
         padding: 0 30px
         width: 100%
         gap: 50px
+        &_main
+            display: flex
+            align-items: center
+            flex-direction: row
+            justify-content: space-between
+            width: 100%
         &_list
             list-style: none
             display: flex
@@ -24,3 +30,5 @@
             display: flex
             align-items: center
             gap: 8px
+        &_other
+            display: flex

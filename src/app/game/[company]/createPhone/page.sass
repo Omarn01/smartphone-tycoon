@@ -1,10 +1,11 @@
 .createPhone
-    display: flex
-    flex-wrap: nowrap
+    display: grid
+    grid-template-columns: 1fr 19fr
+    // flex-wrap: nowrap
     user-select: none
 
+
     &_main
-        width: 90%
         display: flex
         justify-content: center
         align-items: center
@@ -15,12 +16,32 @@
         &_item-left
             display: flex
             align-items: center
+    &-content
+        display: flex
+        flex-direction: column
+        height: 100%
+
+        &_header
+            display: flex
+            justify-content: space-between
+            align-items: center
+            border: 1px solid black
+
+        &_info
+            display: flex
+            align-items: center
+            gap: 15px
+
+        &_edit
+            height: 100%
+            display: flex
+            align-items: center
+
 
     
 .sidebar
     user-select: none
     overflow: scroll
-    width: 10%
     border-right: 1px solid black
 
 
