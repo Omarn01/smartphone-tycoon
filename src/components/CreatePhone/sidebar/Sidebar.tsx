@@ -3,6 +3,17 @@
 import { FC, useCallback, useContext, useEffect, useMemo } from 'react'
 import { Context } from '@/app/layout'
 
+import { LiaPencilRulerSolid } from 'react-icons/lia'
+import { IoColorPaletteOutline } from 'react-icons/io5'
+import { MdOutlineCameraAlt } from 'react-icons/md'
+import { IoPhonePortraitOutline } from 'react-icons/io5'
+import { GoCpu } from 'react-icons/go'
+import { HiOutlineSpeakerWave } from 'react-icons/hi2'
+import { BsBoxSeam } from 'react-icons/bs'
+import { BsPhoneFlip } from 'react-icons/bs'
+
+import './Sidebar.sass'
+
 export default function Sidebar() {
   const sidebar = useContext<any>(Context)
 
@@ -22,7 +33,7 @@ export default function Sidebar() {
             sidebar.sidebar === 1 && 'sidebar-active'
           } `}
         >
-          size
+          <LiaPencilRulerSolid />
         </li>
         <li
           onClick={() => toggleSidebar(2)}
@@ -30,7 +41,7 @@ export default function Sidebar() {
             sidebar.sidebar === 2 && 'sidebar-active'
           } `}
         >
-          color
+          <IoColorPaletteOutline />
         </li>
         <li
           onClick={() => toggleSidebar(3)}
@@ -38,7 +49,7 @@ export default function Sidebar() {
             sidebar.sidebar === 3 && 'sidebar-active'
           } `}
         >
-          main camera
+          <MdOutlineCameraAlt />
         </li>
         <li
           onClick={() => toggleSidebar(4)}
@@ -46,7 +57,7 @@ export default function Sidebar() {
             sidebar.sidebar === 4 && 'sidebar-active'
           } `}
         >
-          display
+          <IoPhonePortraitOutline />
         </li>
         <li
           onClick={() => toggleSidebar(5)}
@@ -54,7 +65,7 @@ export default function Sidebar() {
             sidebar.sidebar === 5 && 'sidebar-active'
           } `}
         >
-          front camera
+          <GoCpu />
         </li>
         <li
           onClick={() => toggleSidebar(6)}
@@ -62,7 +73,7 @@ export default function Sidebar() {
             sidebar.sidebar === 6 && 'sidebar-active'
           } `}
         >
-          processor
+          <BsPhoneFlip />
         </li>
         <li
           onClick={() => toggleSidebar(7)}
@@ -70,7 +81,7 @@ export default function Sidebar() {
             sidebar.sidebar === 7 && 'sidebar-active'
           } `}
         >
-          os
+          <HiOutlineSpeakerWave />
         </li>
         <li
           onClick={() => toggleSidebar(8)}
@@ -78,15 +89,7 @@ export default function Sidebar() {
             sidebar.sidebar === 8 && 'sidebar-active'
           } `}
         >
-          audio
-        </li>
-        <li
-          onClick={() => toggleSidebar(9)}
-          className={`sidebar_item ${
-            sidebar.sidebar === 9 && 'sidebar-active'
-          } `}
-        >
-          package
+          <BsBoxSeam />
         </li>
       </ul>
     </div>

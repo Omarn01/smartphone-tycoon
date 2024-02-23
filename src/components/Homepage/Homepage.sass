@@ -2,6 +2,7 @@
     display: flex
     align-items: center
     justify-content: center
+    color: white
 
     &_phone
         background: url(https://rozetked.me/images/uploads/uvLkKpItjzRj.jpg) no-repeat center
@@ -43,8 +44,18 @@
 
 
 .createCompany
+    &_wrapper 
+        display: flex
+        flex-direction: column
+        // justify-content: space-between
+        height: 100%
+        gap: 100px
 
-
+    &_content
+        display: flex
+        flex-direction: column
+        gap: 15px
+        
     &_title
         color: white
         font-size: 20px

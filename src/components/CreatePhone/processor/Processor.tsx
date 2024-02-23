@@ -15,7 +15,7 @@ export default function Processor() {
 
   return (
     <div
-      style={{ display: context.sidebar === 6 ? 'flex' : 'none' }}
+      style={{ display: context.sidebar === 5 ? 'flex' : 'none' }}
       className='createPhone_processor'
     >
       <div className='createPhone_processor_list-left'>

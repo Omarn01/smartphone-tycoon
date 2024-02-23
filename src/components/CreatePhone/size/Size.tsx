@@ -15,7 +15,7 @@ export default function Size() {
       style={{ display: context.sidebar === 1 ? 'flex' : 'none' }}
       className='createPhone_size'
     >
-      <div className='createPhone_size_list-left'>
+      <div className='createPhone_size_column'>
         <div className='createPhone_size_item-left'>
           <p>Smartphone width</p>
           <div className='createPhone_size-button-group'>
@@ -86,7 +86,27 @@ export default function Size() {
           </div>
         </div>
         <div className='createPhone_size_item-left'>
-          <p>Smartphone thinckess</p>
+          <p>Smartphone border radius</p>
+          <div className='createPhone_size-button-group'>
+            <div
+              className='button-count'
+              onClick={() => context.updateBorderRadius('-')}
+            >
+              -
+            </div>
+            <div
+              className='button-count'
+              onClick={() => context.updateBorderRadius('+')}
+            >
+              +
+            </div>
+          </div>
+        </div>
+        <div className='createPhone_size_item-left'>
+          <p>
+            Smartphone thinckess {Math.floor(context.phone.thickness / 1.7)}
+            (mm)
+          </p>
           <div className='createPhone_size-button-group'>
             <div
               className='button-count'
@@ -155,11 +175,11 @@ export default function Size() {
         </div>
       </div>
 
-      <div className='createPhone_size-phone'>
+      <div className='createPhone_size_colum createPhone_size-phone'>
         <PhoneModel front={true} side={true} />
       </div>
 
-      <div className='createPhone_size_list-right'></div>
+      <div className='createPhone_size_column createPhone_size_list-right'></div>
     </div>
   )
 }

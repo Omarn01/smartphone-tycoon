@@ -21,16 +21,21 @@
         flex-direction: column
         height: 100%
 
-        &_header
-            display: flex
-            justify-content: space-between
-            align-items: center
-            border: 1px solid black
+        &-price
+            border-right: 1px solid black
+            padding-right: 5px
+
 
         &_info
             display: flex
             align-items: center
-            gap: 15px
+            justify-content: flex-end
+            padding: 5px 10px 0
+            gap: 10px
+            p
+                display: flex
+                align-items: center
+                gap: 10px
 
         &_edit
             height: 100%
@@ -39,20 +44,4 @@
 
 
     
-.sidebar
-    user-select: none
-    overflow: scroll
-    border-right: 1px solid black
 
-
-    &_list
-        display: flex
-        flex-direction: column
-        user-select: none
-    &_item
-        padding: 5px
-
-        
-    &-active
-        color: #fff
-        background-color:  #333 

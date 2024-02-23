@@ -28,6 +28,9 @@ export default function PhoneModel({ front, side, back, phone }: IProps) {
             padding: `5px ${phone?.sideFrames || context.phone.sideFrames}px ${
               phone?.chin || context.phone.chin
             }px`,
+            borderRadius: `${
+              phone?.borderRadius || context.phone.borderRadius
+            }px`,
           }}
           className='phoneModel_wrapper'
         >
@@ -62,9 +65,13 @@ export default function PhoneModel({ front, side, back, phone }: IProps) {
       {side && (
         <div
           style={{
-            width: phone?.thickness || context.phone.phoneThickness,
-            height: phone?.height || context.phone.phoneHeight,
-            backgroundColor: phone?.color || context.phone.phoneColor,
+            width: phone?.thickness || context.phone.thickness,
+            height: phone?.height || context.phone.height,
+            backgroundColor: phone?.color || context.phone.color,
+            borderRadius: `${
+              phone?.borderRadius ||
+              Math.floor(context.phone.borderRadius / 1.3)
+            }px`,
           }}
           className='phoneModel-side'
         ></div>
@@ -73,9 +80,12 @@ export default function PhoneModel({ front, side, back, phone }: IProps) {
       {back && (
         <div
           style={{
-            width: phone?.width || context.phone.phoneWidth,
-            height: phone?.height || context.phone.phoneHeight,
-            backgroundColor: phone?.color || context.phone.phoneColor,
+            width: phone?.width || context.phone.width,
+            height: phone?.height || context.phone.height,
+            backgroundColor: phone?.color || context.phone.color,
+            borderRadius: `${
+              phone?.borderRadius || context.phone.borderRadius
+            }px`,
           }}
           className='phoneModel-back'
         >

@@ -9,6 +9,7 @@ import MainCamera from '@/components/CreatePhone/mainCamera/MainCamera'
 import Display from '@/components/CreatePhone/display/Display'
 import Processor from '@/components/CreatePhone/processor/Processor'
 import Package from '@/components/CreatePhone/package/Package'
+import { IoPhonePortraitOutline } from 'react-icons/io5'
 
 import { Context } from '@/app/layout'
 import { useContext } from 'react'
@@ -21,12 +22,11 @@ export default function Page() {
         <Sidebar />
       </div>
       <div className='createPhone-content'>
-        <div className='createPhone-content_header'>
-          <h3>Title</h3>
-          <div className='createPhone-content_info'>
-            <p>{context.price} $</p>
-            <p>Phone Name</p>
-          </div>
+        <div className='createPhone-content_info'>
+          <p className='createPhone-content-price'>$ {context.price}</p>
+          <p>
+            Phone Name <IoPhonePortraitOutline />
+          </p>
         </div>
         <div className='createPhone-content_edit'>
           <Size />
