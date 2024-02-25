@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
-
-export const useLocalStorage = ({ key }: any) => {
-  const [state, setState] = useState<any>(() => {
-    const phone = localStorage.getItem('phone')
-    return key || []
-  })
-  useEffect(() => {
-    localStorage.setItem(key, state)
-  }, [state])
-  return [state, setState]
+export const useLocalStorage = (key: string) => {
+  const setItem = (value: any) => {
+    window?.localStorage?.setItem(key, value)
+  }
+  const getItem = () => {
+    const value = window?.localStorage?.getItem(key)
+    return value
+  }
+  const deleteItem = () => {
+    return window?.localStorage?.removeItem(key)
+  }
+  return { setItem, getItem, deleteItem }
 }

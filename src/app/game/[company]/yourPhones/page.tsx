@@ -3,13 +3,16 @@
 import { useContext } from 'react'
 import PhoneModel from '@/components/PhoneModel/PhoneModel'
 import { Context, IPhone } from '@/app/layout'
+import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 export default function YourPhones() {
-  const context = useContext<any>(Context)
+  const { getItem: localYourPhones, setItem: setLocalYourPhones } =
+    useLocalStorage('yourPhones')
+  console.log(Array(localYourPhones))
   return (
     <div>
-      {context.yourPhone.map((phone: IPhone, i: number) => (
-        <PhoneModel key={i} front={true} phone={phone} />
+      {Array(localYourPhones).map((_, i: number) => (
+        <PhoneModel key={i} front={true} />
       ))}
     </div>
   )

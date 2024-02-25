@@ -176,7 +176,7 @@ export default function Size() {
       </div>
 
       <div className='createPhone_size_colum createPhone_size-phone'>
-        <PhoneModel front={true} side={true} />
+        <PhoneModel front={true} side={true} noColor={true} />
       </div>
 
       <div className='createPhone_size_column createPhone_size_list-right'></div>

@@ -39,6 +39,11 @@ export interface IPhone {
   HDRValue: number
   HDR: string
   adaptiveScreenFrequency: boolean
+  // Camera
+  // main camera
+  digitalZoom: number
+  opticalZoom: number
+  aperture: number
 }
 
 interface IPrice {
@@ -107,6 +112,9 @@ export const initialPhoneState = {
   HDRValue: 0,
   HDR: 'none',
   adaptiveScreenFrequency: false,
+  digitalZoom: 1,
+  opticalZoom: 0,
+  aperture: 4,
 }
 
 export const Context = createContext({})
@@ -172,6 +180,43 @@ export default function RootLayout({
 
   // Size
   const [sidebar, setSidebar] = useState(1)
+
+  const updateDigitalZoom = (sign: string) => {
+    if (sign === '+' && phone.digitalZoom < 200)
+      setPhone((prev: IPhone) => ({
+        ...prev,
+        digitalZoom: prev.digitalZoom + 1,
+      }))
+    if (sign === '-' && phone.digitalZoom > 1)
+      setPhone((prev: IPhone) => ({
+        ...prev,
+        digitalZoom: prev.digitalZoom - 1,
+      }))
+  }
+  const updateOpticalZoom = (sign: string) => {
+    if (sign === '+' && phone.opticalZoom < 15)
+      setPhone((prev: IPhone) => ({
+        ...prev,
+        opticalZoom: prev.opticalZoom + 1,
+      }))
+    if (sign === '-' && phone.opticalZoom > 0)
+      setPhone((prev: IPhone) => ({
+        ...prev,
+        opticalZoom: prev.opticalZoom - 1,
+      }))
+  }
+  const updateAperture = (sign: string) => {
+    if (sign === '+' && phone.aperture < 5)
+      setPhone((prev: IPhone) => ({
+        ...prev,
+        aperture: parseFloat((prev.aperture + 0.1).toFixed(1)),
+      }))
+    if (sign === '-' && phone.aperture > 1)
+      setPhone((prev: IPhone) => ({
+        ...prev,
+        aperture: parseFloat((prev.aperture - 0.1).toFixed(1)),
+      }))
+  }
 
   const checkMatrix = useMemo(() => {
     if (phone.matrix === 'TN') {
@@ -521,7 +566,7 @@ export default function RootLayout({
   const updateThickness = (sign: string) => {
     if (sign === '+' && phone.thickness < 30)
       setPhone((prev: IPhone) => ({ ...prev, thickness: prev.thickness + 1 }))
-    if (sign === '-' && phone.thickness > 5)
+    if (sign === '-' && phone.thickness > 12)
       setPhone((prev: IPhone) => ({ ...prev, thickness: prev.thickness - 1 }))
   }
 
@@ -575,6 +620,10 @@ export default function RootLayout({
             updateScreenProtection,
             updateHDR,
             updateAdaptiveScreenFrequency,
+            // Camera
+            updateDigitalZoom,
+            updateOpticalZoom,
+            updateAperture,
           }}
         >
           {children}
