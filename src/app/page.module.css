@@ -5,3 +5,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 140, 0);
+  color: #fff;
+}
