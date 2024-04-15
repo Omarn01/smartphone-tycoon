@@ -8,7 +8,7 @@ import { useLocalStorage } from '@/hooks/useLocalStorage'
 export default function YourPhones() {
   const { getItem: localYourPhones, setItem: setLocalYourPhones } =
     useLocalStorage('yourPhones')
-  console.log(Array(localYourPhones))
+  console.log(Object(localYourPhones()?.slice(1, -1)))
   return (
     <div>
       {Array(localYourPhones).map((_, i: number) => (
