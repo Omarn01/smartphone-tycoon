@@ -13,7 +13,7 @@ import { IoPhonePortraitOutline } from 'react-icons/io5'
 
 import { Context } from '@/app/layout'
 import { useContext, useEffect, useState } from 'react'
-import { useLocalStorage } from '@/hooks/useLocalStorage'
+// import { useLocalStorage } from '@/hooks/useLocalStorage'
 import Link from 'next/link'
 import CreatePhone from '@/components/CreatePhone/CreatePhone'
 
@@ -30,8 +30,8 @@ export default function Page() {
   //     setAnimationPlayState('')
   //   }, 5500)
   // }, [context.sidebar])
-  const { getItem } = useLocalStorage('cashCompany')
-  const { getItem: localNameCompany } = useLocalStorage('nameCompany')
+  // const { getItem } = useLocalStorage('cashCompany')
+  // const { getItem: localNameCompany } = useLocalStorage('nameCompany')
 
   const startCreatingPhone = () => {
     if (namePhone) setNameTrue(true)
@@ -44,12 +44,12 @@ export default function Page() {
       ) : (
         <div className='createPhone-namePhone'>
           <div className='createPhone-close-block'>
-            <Link
+            {/* <Link
               href={`/game/${localNameCompany}/`}
               className='createPhone-close'
             >
               x
-            </Link>
+            </Link> */}
           </div>
           <div className='createPhone-namePhone-block'>
             <div className='createPhone-namePhone-block-content'>
